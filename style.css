@@ -1,0 +1,478 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+font: 16px/1.5 Georgia, Arial, Helvetica, sans-serif;
+background: #4E5869;
+margin: 0;
+padding: 0;
+color: #000;
+min-width:500px;
+}
+
+/* ~~ Element/tag selectors ~~ */
+ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+padding: 0;
+margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+margin-top: 0;
+}
+.upper{
+text-transform:uppercase;
+}
+a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+border: none;
+}
+
+/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
+a:link {
+color:#414958;
+text-decoration: underline; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
+}
+a:visited {
+color: #4E5869;
+text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse.*/
+text-decoration: none;
+}
+.name{
+    width: 100%;
+}
+.Three-Dee{/* 3D style text */
+margin-bottom: 3%;
+font-family: Georgia, serif;
+line-height: 1em;
+color: #e07619;
+font-weight:bold;
+font-size: 3.2em;
+text-shadow:0px 0px 0 rgb(200,94,1),0px -1px 0 rgb(185,79,-14),0px -2px 0 rgb(171,65,-28),0px -3px 0 rgb(156,50,-43),0px -4px 0 rgb(142,36,-57),0px -5px 0 rgb(127,21,-72), 0px -6px 0 rgb(113,7,-86),0px -7px 6px rgba(0,0,0,0.6),0px -7px 1px rgba(0,0,0,0.5),0px 0px 6px rgba(0,0,0,.2);}
+
+/* ~~ this container surrounds all other divs giving them their percentage-based width ~~ */
+.container {
+background: #e7e7e7;
+overflow: hidden;
+
+
+}
+
+.sidebar1 { /*define the sidebar*/ 
+float: left;
+width:19%;
+background: #e7e7e7;
+
+}	
+/* ~~ This grouped selector gives the lists in the .content area space ~~ */
+.content ul, .content ol { 
+padding: 0 15px 15px 40px; /* this padding mirrors the right padding in the headings and paragraph rule above. Padding was placed on the bottom for space between other elements on the lists and on the left to create the indention. These may be adjusted as you wish. */
+}
+
+
+ul.nav {/*navigation menu in side bar*/
+list-style: none; /* this removes the list marker */
+border-top: 1px solid #666; /* this creates the top border for the links - all others are placed using a bottom border on the LI */
+}
+ul.nav li {
+border-bottom: 1px solid #666; /* this creates the button separation */
+}
+ul.nav li a{ /* grouping these selectors makes sure that your links retain their button look even after being visited */
+padding: 5px 5px 5px 15px;
+display: block; /* this gives the link block properties causing it to fill the whole LI containing it. This causes the entire area to react to a mouse click. */
+text-decoration: none;
+background: #acacac; /* Old browsers */
+background: -moz-linear-gradient(top,  #acacac 0%, #9b9b9b 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#acacac), color-stop(100%,#9b9b9b)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #acacac 0%,#9b9b9b 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #acacac 0%,#9b9b9b 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #acacac 0%,#9b9b9b 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #acacac 0%,#9b9b9b 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#acacac', endColorstr='#9b9b9b',GradientType=0 ); /* IE6-9 */
+color: #000;
+}
+ul.nav li a:hover, ul.nav li a:active, ul.nav li a:focus { /* this changes the background and text color for both mouse and keyboard navigators */
+background: #6F7D94;
+color: #FFF;
+}
+ul.nav ul li a{
+background: #dedede; /* Old browsers */
+background: -moz-linear-gradient(top,  #dedede 0%, #d6d6d6 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#dedede), color-stop(100%,#d6d6d6)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #dedede 0%,#d6d6d6 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #dedede 0%,#d6d6d6 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #dedede 0%,#d6d6d6 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #dedede 0%,#d6d6d6 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dedede', endColorstr='#d6d6d6',GradientType=0 ); /* IE6-9 */
+
+
+}
+/*end of navigation menu*/
+.content { /*whole other space on a web page except sidebar*/
+padding-top: 30px;
+width: 80%;
+float: left;
+border-left: 1px solid #000000;
+background: #fdfdfd; /* Old browsers */
+background: -moz-linear-gradient(top,  #fdfdfd 0%, #f8f8f8 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fdfdfd), color-stop(100%,#f8f8f8)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #fdfdfd 0%,#f8f8f8 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #fdfdfd 0%,#f8f8f8 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #fdfdfd 0%,#f8f8f8 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #fdfdfd 0%,#f8f8f8 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdfdfd', endColorstr='#f8f8f8',GradientType=0 ); /* IE6-9 */
+
+}
+
+.tabs ul, .tabs2 ul, .newNews ul{
+list-style: none;
+
+}
+.upBar{/* bar on a top of page, which contains information about the location */
+width: 94%;
+font-size:75%;
+background: #474747; /* Old browsers */
+background: -moz-linear-gradient(top,  #474747 0%, #262626 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#474747), color-stop(100%,#262626)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #474747 0%,#262626 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #474747 0%,#262626 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #474747 0%,#262626 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #474747 0%,#262626 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#474747', endColorstr='#262626',GradientType=0 ); /* IE6-9 */
+display: table;
+height: 20px;
+padding: 5px 3% 5px 3%;
+}
+.upBar p{
+color: #afafaf;
+display: table-cell;
+}
+.upBar #place{
+text-align: right;
+
+}/*end of topBar*/
+.search{/*search bar in sidebar under upBar*/
+padding: 3% 3% 2% 3%;
+font-size:75%;
+background: #dee4e5; /* Old browsers */
+background: -moz-linear-gradient(top,  #dee4e5 0%, #b4babc 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#dee4e5), color-stop(100%,#b4babc)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #dee4e5 0%,#b4babc 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #dee4e5 0%,#b4babc 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #dee4e5 0%,#b4babc 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #dee4e5 0%,#b4babc 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dee4e5', endColorstr='#b4babc',GradientType=0 ); /* IE6-9 */
+
+}
+.search p{
+color:#a1a4a4;
+display: table-cell;
+}
+
+.search .facts{
+display: table; 
+width: 100%;
+padding-bottom: 3%;
+}
+#logout{
+text-align: right;
+}
+#searchBox{/*search field*/
+-webkit-border-radius: 90px;
+-moz-border-radius: 90px;
+border-radius: 90px;
+padding:2% 0 2%;
+width: 100%;
+margin-bottom: 2%;
+}
+/*end of search bar*/
+
+.tabs, .tabs2{/*two slideshows on a web page */
+background: #e5e5e5; /* Old browsers */
+background: -moz-linear-gradient(top,  #e5e5e5 0%, #cacaca 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e5e5e5), color-stop(100%,#cacaca)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #e5e5e5 0%,#cacaca 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #e5e5e5 0%,#cacaca 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #e5e5e5 0%,#cacaca 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #e5e5e5 0%,#cacaca 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#cacaca',GradientType=0 ); /* IE6-9 */
+width: 100%;
+padding-bottom:2%;
+float: left;
+}
+#inherit, #inherit2{
+padding:3% 3% 0 3%;
+}
+.hider, .tabs2{/*hides content, which isn't in use on normal view */
+display:none;
+}
+.circle{/* slideshow button images*/
+background-image: url(pics/buttonFree.png);
+display:block;
+background-repeat:no-repeat;
+width: 20px;
+height:17px;
+position:relative;
+float:right;
+
+}
+.selected{/* slideshow button images*/
+background-image: url(pics/buttonCheck.png);
+}
+/* end of slideshow*/
+.halfContent {/*other half of content(middle column)*/
+float: left;
+width:57%;
+margin-left:3%;
+
+}
+.sideContent{/*second half of class content (side column)*/
+float: left;
+width:37%;
+margin-left:3%;	
+}
+
+.miniNews{/*tiny news, which are side by side in middle column*/
+width:45%;
+float: left;
+
+}
+#rightMini{
+float: right;
+}
+/*end of tiny news */
+.ad{/*defines both ads*/
+float:left;
+width:90%;	
+background: #e3e3e3;
+padding: 5%;
+border: 1px solid #c9c9c9;
+}
+#ad{ /*ad picture inside ad div*/
+max-height:50%;
+max-width: 50%;
+display: block;
+margin: 0 auto;	
+}
+.sideContent #ad{/*ad picture inside ad div in side column*/
+max-height:100%;
+max-width: 100%;
+display: block;
+margin: 0 auto;	
+}
+/*end of ad*/
+.news{/*news in middle column*/
+float:left;
+width: 100%
+}
+.half{/*seperates news div in to two halfs one picture and another for a text*/
+float:left;
+width:45%;
+margin-right:5%;
+}
+
+.mainNews, .miniNews, .news, .ad{
+padding-top: 5%;	
+}
+/*end of news*/
+.end{/*bottom bar, which contains link to get back to the start of web page*/
+float:left;
+margin-top:5%;
+margin-bottom:5%;
+width:100%;
+padding-top:1em;
+padding-bottom:1em;
+background: #dddddd;	
+border-top: 1px solid;
+border-bottom: 1px solid;
+border-color:#999999;
+}
+.end a{
+float:right;
+margin-right: 5%;
+}
+/*end of end bar*/
+
+.newNews{/*tabs, which contain newest news*/
+float:left;
+padding-top: 5%;
+}
+.newNews ul{
+display: table;
+
+}
+.newNews ul li a{
+text-decoration: none;
+}
+.topic{
+display:table-cell;
+width: 40%;
+}
+.newsContent{/*content of tabs */
+border-top: 2px solid #000;
+}
+.newsContent ul li{
+border-bottom: 1px solid #e6e6e6;
+padding: 3% 0 3%;
+}
+.vote{ /*div with opinion poll */
+float:left;
+width:100%;
+}
+.vote ul{
+
+list-style: none;	
+}
+.vote li{
+padding: 3%;
+list-style: none;	
+}
+.vote #name{
+border-bottom:2px solid;	
+}
+/*end of vote*/
+
+
+.squareNews{/*news and picture with rounded corners in side column*/
+background: #f7f7f7;
+border: 1px solid #cecece;
+float: left;
+padding: 2% 5% 5% 5%;
+margin: 2% 2% 2% 0;
+}
+#dark{/*picture with rounded corners*/
+border-radius: 40px;
+-moz-border-radius: 40px;
+-webkit-border-radius: 40px;
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
+.textBalloon{/*text with speech bubble*/
+float:left;
+}
+.ballText{
+padding-top: 5%;
+border-top: 1px solid #e6e6e6;
+}
+.triangle-border { /*style of speech bubble */
+position:relative;
+padding:15px;
+border: 1px solid #c5c5c5;
+color:#333;
+background:#ffffff;
+margin-right: 2%;
+}
+.triangle-border:before {
+content:"";
+position:absolute;
+bottom:-14px; /* value = - border-top-width - border-bottom-width */
+left:46px; /* controls horizontal position */
+border-width:14px 14px 0;
+border-style:solid;
+border-color:#c5c5c5 transparent;
+/* reduce the damage in FF3.0 */
+display:block;
+width:0;
+}
+
+/* creates the smaller  triangle */
+.triangle-border:after {
+content:"";
+position:absolute;
+bottom:-12px; /* value = - border-top-width - border-bottom-width */
+left:47px; /* value = (:before left) + (:before border-left) - (:after border-left) */
+border-width:13px 13px 0;
+border-style:solid;
+border-color:#fff transparent;
+/* reduce the damage in FF3.0 */
+display:block;
+width:0;
+}
+/*end of speech bubble*/
+
+img{
+max-width:100%;
+}
+/*media-query for smartphone portrait view*/
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) and (orientation : portrait) {
+body{
+font-size: xx-large;/*set font size bigger*/
+}
+.Three-Dee{
+font-size: 4em;
+}
+.container {
+width: 100%;
+overflow: hidden;
+}
+
+#secondAd, .newNews, .tabs, .vote, .squareNews, .hiderMobile {/*hide some divs, which aren't included smartphone view*/
+display:none;
+}
+.content {
+width: 65%;
+}
+.sidebar1 {
+width: 34%;
+
+}	
+.halfContent, .sideContent {/*set sideContent under halfContent so there is only one column in content div*/
+width:94%;
+margin-right: 3%;
+}
+
+.hider, .tabs2{/*show different views of newNews and firstNews*/
+display: block;
+}
+
+#ad{
+max-height: 90%;
+max-width: 90%;
+margin: 0 auto;	
+}
+.miniNews{
+width: 100%;
+float: left;
+}
+
+}
+@media only screen /*media-query for smartphone landscape view*/
+and (min-device-width : 320px) 
+and (max-device-width : 568px) 
+and (orientation : landscape) {
+
+
+.container {
+
+}
+.sidebar1 {
+
+}
+}
+/*media-query for tablet portrait view*/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+.container {
+
+
+}
+.sidebar1 {
+
+
+}
+#firstAd{/*hides first ad to show that these media-queries works*/
+display:none;
+}
+}
+/*media-query for tablet landscape view*/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+.container {
+
+
+}
+.sidebar1 {
+
+}
+}

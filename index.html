@@ -1,0 +1,258 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="user-scalable=no" /><!--disable scaling in smartphones and tablets -->
+
+<meta charset="utf-8">
+<title>Conmio</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script><!--jquery-->
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script><!--jquery-ui -->
+</head>
+
+<body>
+ <script>
+     
+   $(function() {
+       
+       /*because there is two different views of couple of divs, I load content of div to another view div. so i don't have to write content of div multiply times*/
+       $( "#inherit2" ).load( "index.html .textBalloon", function(){/*load textBalloon class in to inherit2 div*/
+			  $( ".tabs2" ).tabs({ active: 3 });	/*build jquery-ui tabs*/
+                      });
+                      
+	    $( "#inherit" ).load( "index.html .firstNews", function(){
+			  $( ".tabs" ).tabs({ active: 3 });
+                          if ($( "#circle" ).hasClass( "ui-state-active" ) === true){/*set right circle picture to selected tab button*/
+	 
+	  $( "#circle a" ).toggleClass( "selected");
+  }
+  $( ".circle" ).click(function() {
+	  $( ".circle" ).toggleClass( "selected", false);
+	  $( ".ui-state-active a" ).toggleClass( "selected");
+          $( ".newNews ul li a" ).removeClass( "selected");
+ });
+		});
+
+      $( ".newNews" ).tabs();
+   });
+  </script>
+<div class="container" id="top">
+  <div class="sidebar1">
+      <div class="upBar">
+        <p> HELSINKI, SUOMI</p>
+        <p id="place">Vaihda sijainti</p>
+    </div>
+      <div class="search">
+          <div class="facts">
+          <p id="person">MATTI MEIKÄLÄINEN</p>
+          <p id="logout">Kirjaudu ulos</p>
+          </div>
+          <input type="text" id="searchBox">
+      </div>
+    <ul class="nav">
+     <li><a href="index.html">Etusivu</a></li>
+      <li><a href="#">Uutiset</a></li>
+       <ul>
+      <li><a href="#">Fringilla Condimentum</a></li>
+      <li><a href="#">Lorem</a></li>
+      <li><a href="#">Fringillau</a></li>
+        <li><a href="#">Curabitur</a></li>
+         <li><a href="#">Mollis</a></li>
+         <li><a href="#">Lorem</a></li>
+       <li><a href="#">Fringillau</a></li>
+        <li><a href="#">Curabitur</a></li>
+         <li><a href="#">Mollis</a></li>
+         <li><a href="#">Fringilla Condimentum</a></li>
+      </ul>
+      <li><a href="#">Foorumi</a></li>
+      <li><a href="#">Kauppa</a></li>
+      <li><a href="#">Messut</a></li>
+       <li><a href="#">Asiakaspalvelu</a></li>
+       <ul>
+        <li><a href="#">Lorem</a></li>
+		<li><a href="#">Fringillau</a></li>
+        <li><a href="#">Curabitur</a></li>
+         <li><a href="#">Mollis</a></li>
+       </ul>
+        <li><a href="#">Näköislehti</a></li>
+         <li><a href="#">Näe meidät Facebookissa</a></li>
+      
+    </ul>
+    
+    <!-- end .sidebar1 --></div>
+  <div class="content">
+  <div class="halfContent">
+      <div class="name">
+          <p class="Three-Dee">Otto Turunen</p>
+      </div>
+  <div class="tabs">
+  <div id="inherit"><!-- inherits firstNews div-->
+</div>
+   <ul>
+    <li id="circle"><a href="#firstN" class="circle"></a></li>
+    <li><a href="#secondN" class="circle"></a></li>
+    <li><a href="#tabs-3" class="circle"></a></li>
+  </ul>
+
+  </div>
+      <div class="hider">
+  <div class="firstNews">
+      
+  <div id="firstN" class="show">
+   <h2>tellus nullamaa</h2>
+ <p>Lorem ipsum dolor sit amet, nibh lectus, nam mi euismod suspendisse. Blandit neque lacus aliquam wisi non, nisl purus, amet justo dictum rhoncus aenean mauris. Eu ac massa integer aenean orci leo</p>
+  </div>
+  <div id="secondN" class="show">
+   <h2>tellus nullam</h2>
+ <p>Lacus aliquam wisi non, nisl purus, amet justo dictum rhoncus aenean mauris. Eu ac massa integer aenean orci leo</p>
+ 
+  </div>
+  </div>
+      </div>
+  <div class="mainNews">
+  
+   
+   <img src="pics/babyMed.jpg" id="baby">
+   <h2>tellus nullam</h2>
+ <p>Lorem ipsum dolor sit amet, nibh lectus, nam mi euismod suspendisse. Blandit neque lacus aliquam wisi non, nisl purus, amet justo dictum rhoncus aenean mauris. Eu ac massa integer aenean orci leo</p>
+  </div>
+  <div class="miniNews" id="leftMini">
+  <img src="pics/paperPile.jpg" id="paper">
+  <h3>est vitae</h3>
+  <p>Lorem ipsum dolor sit amet, sagittis velit. Ante vehicula mi, eleifend sagittis dui. In pharetra, aliquam pharetra.</p>
+  
+  </div>
+      <div class="miniNews" id="rightMini">
+  <img src="pics/glasses.jpg" id="glasses">
+  <h3>amet turpis</h3>
+  <p>Lorem ipsum dolor sit amet, at curae vel. Varius magnis, rhoncus tortor viverra, vivamus sit lacus. Ac eget erat, metus lectus suspendisse, sapien felis.</p>
+  
+  </div>
+  <div class="ad" id="firstAd">
+  <img src="pics/ad.jpg" id="ad">
+  </div>
+  <div class="news">
+    <h2>amet turpis</h2>
+    <div class=half>
+  <img src="pics/paperPile.jpg" id="paper">
+  </div>
+  <div class=half>
+  <p>Lorem ipsum dolor sit amet, at curae vel. Varius magnis, rhoncus tortor viverra, vivamus sit lacus. Ac eget erat, metus lectus suspendisse, sapien felis.</p>
+  </div>
+  </div>
+  <div class="news">
+    <h2>amet turpis</h2>
+    <div class=half>
+  <img src="pics/paperPile.jpg" id="paper">
+  </div>
+    <div class=half id="right">
+  <p>Lorem ipsum dolor sit amet, at curae vel. Varius magnis, rhoncus tortor viverra, vivamus sit lacus. Ac eget erat, metus lectus suspendisse, sapien felis.</p>
+  </div>
+  </div>
+  <div class="news">
+    <h2>amet turpis</h2>
+    <div class=half>
+  <img src="pics/paperPile.jpg" id="paper">
+  </div>
+  <div class=half>
+  <p>Lorem ipsum dolor sit amet, at curae vel. Varius magnis, rhoncus tortor viverra, vivamus sit lacus. Ac eget erat, metus lectus suspendisse, sapien felis.</p>
+  </div>
+  </div>
+     </div>
+     <div class="sideContent">
+    <div class="ad" id="secondAd">
+  <img src="pics/ad.jpg" id="ad">
+  </div>
+         <div class="newNews">
+             <h3>UUSIMMAT</h3>
+              <ul>
+                  <li class="topic"><a href="#firstT">Lorem</a></li>
+    <li class="topic"><a href="#secondT">Ipsum</a></li>
+    <li class="topic"><a href="#thirdT">Quisque</a></li>
+  </ul>
+             <div class="newsContent" id="firstT">
+                 <ul>
+                     <li><a>Lorem ipsum dolor sit amet, aliquam quam pulvinar, iaculis et, molestie rhoncus.</a></li>
+                     <li><a>Lorem ipsum dolor sit amet, aliquam quam pulvinar, iaculis et, molestie rhoncus.</a></li>
+                     <li><a>Lorem ipsum dolor sit amet, aliquam quam pulvinar, iaculis et, molestie rhoncus.</a></li>
+                     <li><a>Lorem ipsum dolor sit amet, aliquam quam pulvinar, iaculis et, molestie rhoncus.</a></li>
+                 </ul>
+             </div>    
+             <div class="newsContent" id="secondT">
+                 <ul>
+                     <li><a>Lorem ipsum dolor sit amet, odio nisl etiam vel ac, aenean tempor pellentesque odio urna.</a></li>
+                     <li><a>Lorem ipsum dolor sit amet, odio nisl etiam vel ac, aenean tempor pellentesque odio urna.</a></li>
+                     <li><a>Lorem ipsum dolor sit amet, odio nisl etiam vel ac, aenean tempor pellentesque odio urna.</a></li>
+                     <li><a>Lorem ipsum dolor sit amet, odio nisl etiam vel ac, aenean tempor pellentesque odio urna.</a></li>
+                 </ul>
+             </div>
+             <div class="newsContent" id="thirdT">
+                 <ul>
+                     <li><a>Curabitur minima commodo lacinia tempus ac, est donec fusce interdum, fermentum eu scelerisque euismod parturient integer.</a></li>
+                     <li><a>Curabitur minima commodo lacinia tempus ac, est donec fusce interdum, fermentum eu scelerisque euismod parturient integer.</a></li>
+                     <li><a>Curabitur minima commodo lacinia tempus ac, est donec fusce interdum, fermentum eu scelerisque euismod parturient integer.</a></li>
+                     <li><a>Curabitur minima commodo lacinia tempus ac, est donec fusce interdum, fermentum eu scelerisque euismod parturient integer.</a></li>
+                 </ul>
+             </div>
+         </div>
+         
+  <div class="vote">
+  <ul>
+  <li id="name"><b>sollicitudin mauris sit</b></li>
+  <li id="question"><b>Non dis in quisque, et nonummy mattis eleifend duis?</b></li>
+  <li id="vote">Kyllä<input type="checkbox" name="vote" value="yes"  /> ei<input type="checkbox" name="vote" value="no"  /></li>
+  <li id="button"><button type="submit">Äänestä!</button></li>
+  <li></li>
+  </ul>
+  </div>
+ 
+  <div class="squareNews">
+  <h2>pede amet mauris vestibulum</h2>
+  <p>Lorem ipsum dolor sit amet, risus odio duis phasellus, mauris erat, in wisi a nonummy quam, pulvinar vitae sollicitudin sit diam, dui sed ac risus nam interdum. Purus in, consequat augue, vitae senectus sit cursus</p>
+  <img src="pics/dark_small.jpg" id="dark">
+  </div>
+         <div class="tabs2">
+  <div id="inherit2">
+</div>
+   <ul>
+    <li id="circle"><a href="#firstB" class="circle"></a></li>
+    <li><a href="#secondB" class="circle"></a></li>
+    <li><a href="#thirdB" class="circle"></a></li>
+  </ul>
+
+  </div>
+         <div class="hiderMobile">
+         <div class="textBalloon">
+             <h3>Tortor Viverra</h3>
+             <div id="firstB" class="ballText">
+                 <h3>felis laoreet hac convallis1</h3>
+                 <p class="triangle-border">
+                     Lorem ipsum dolor sit amet, ligula tellus nam libero, dolor tortor pede eleifend, malesuada arcu in duis consectetuer mi varius, porta hendrerit malesuada non a etiam massa, cras donec et vestibulum tellus laoreet. Urna tellus consectetuer sed phasellus.
+                 </p>
+                 <h4 class="upper">vestibulum turpis</h4>
+             </div>
+             <div id="secondB" class="ballText">
+                 <h3>felis laoreet hac convallis2</h3>
+                 <p class="triangle-border">
+                     Lorem ipsum dolor sit amet, ligula tellus nam libero, dolor tortor pede eleifend, malesuada arcu in duis consectetuer mi varius, porta hendrerit malesuada non a etiam massa, cras donec et vestibulum tellus laoreet. Urna tellus consectetuer sed phasellus.
+                 </p>
+                 <h4 class="upper">vestibulum turpis</h4>
+             </div>
+             <div id="thirdB" class="ballText">
+                 <h3>felis laoreet hac convallis3</h3>
+                 <p class="triangle-border">
+                     Lorem ipsum dolor sit amet, ligula tellus nam libero, dolor tortor pede eleifend, malesuada arcu in duis consectetuer mi varius, porta hendrerit malesuada non a etiam massa, cras donec et vestibulum tellus laoreet. Urna tellus consectetuer sed phasellus.
+                 </p>
+                 <h4 class="upper">vestibulum turpis</h4>
+             </div>
+         </div>
+         </div>
+     </div>
+     <div class="end">
+     <a href="#top">Takaisin Ylös</a>
+     </div>
+    <!-- end .content --></div>
+  <!-- end .container --></div>
+ 
+</body>
+</html>
